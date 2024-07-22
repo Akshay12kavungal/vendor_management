@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %}Purchase Orders{% endblock %}
+
+{% block content %}
+<h2>Purchase Orders</h2>
+<a href="{% url 'purchase_order_create' %}" class="btn btn-primary mb-3">Add Purchase Order</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>PO Number</th>
+            <th>Vendor</th>
+            <th>Order Date</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for purchase_order in purchase_orders %}
+        <tr>
+            <td>{{ purchase_order.po_number }}</td>
+            <td>{{ purchase_order.vendor.name }}</td>
+            <td>{{ purchase_order.order_date }}</td>
+            <td>
+                <a href="{% url 'purchase_order_detail' purchase_order.pk %}" class="btn btn-info">View</a>
+                <a href="{% url 'purchase_order_update' purchase_order.pk %}" class="btn btn-warning">Edit</a>
+                <a href="{% url 'purchase_order_delete' purchase_order.pk %}" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

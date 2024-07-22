@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Delete Purchase Order{% endblock %}
+
+{% block content %}
+<h2>Are you sure you want to delete Purchase Order #{{ purchase_order.po_number }}?</h2>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Confirm</button>
+    <a href="{% url 'purchase_order_list' %}" class="btn btn-secondary">Cancel</a>
+</form>
+{% endblock %}

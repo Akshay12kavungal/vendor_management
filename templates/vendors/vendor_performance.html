@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}Vendor Performance{% endblock %}
+
+{% block content %}
+<h2>Performance Metrics for {{ vendor.name }}</h2>
+<ul>
+    <li><strong>On-Time Delivery Rate:</strong> {{ performance.on_time_delivery_rate }}%</li>
+    <li><strong>Quality Rating Average:</strong> {{ performance.quality_rating_avg }}</li>
+    <li><strong>Average Response Time:</strong> {{ performance.average_response_time }} days</li>
+    <li><strong>Fulfillment Rate:</strong> {{ performance.fulfillment_rate }}%</li>
+</ul>
+<a href="{% url 'vendor_detail' vendor.pk %}" class="btn btn-secondary">Back to Details</a>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Vendor Details{% endblock %}
+
+{% block content %}
+<h2>{{ vendor.name }}</h2>
+<p><strong>Contact Details:</strong> {{ vendor.contact_details }}</p>
+<p><strong>Address:</strong> {{ vendor.address }}</p>
+<a href="{% url 'vendor_update' vendor.pk %}" class="btn btn-warning">Edit</a>
+<a href="{% url 'vendor_delete' vendor.pk %}" class="btn btn-danger">Delete</a>
+<a href="{% url 'vendor_list' %}" class="btn btn-secondary">Back to List</a>
+<a href="{% url 'vendor_performance' vendor.pk %}" class="btn btn-info">View Performance</a>
+{% endblock %}
