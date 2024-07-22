@@ -1,4 +1,7 @@
 Project Overview: Vendor Management System
+
+
+
 Django-Based Project
 Objective: Develop a system to manage vendor profiles, track purchase orders, and calculate vendor performance metrics using Django.
 
